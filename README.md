@@ -1,7 +1,6 @@
-# Fresh project
+# Demo Revere Transaction
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Demonstration performing a basic sale transaction using the Revere Tokenizer and Transaction APIs in the Deno Fresh framework.
 
 ### Usage
 
