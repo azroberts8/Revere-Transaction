@@ -21,6 +21,7 @@ reverePay.onSuccess = (data) => {
             "token": data.token
         })
     })
+        .then(res => res.json())
         .then(res => console.log(res));
 }
 

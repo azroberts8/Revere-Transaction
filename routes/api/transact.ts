@@ -42,7 +42,7 @@ export const handler: Handlers = {
 
         const response = await fetch(`https://api.reverepayments.dev/api/v1/groups/${MERCHANT_ID}/transaction`, requestOptions)
             .then(res => res.json())
-            .catch(err => err);
+            .catch(err => { return `Error: ${err}` });
 
         return new Response(response);
     }
