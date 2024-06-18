@@ -25,7 +25,7 @@ export const handler: Handlers = {
             },
             currency: "USD",
             email_address: "test@example.com",
-            email_recipt: "test@example.com",
+            email_recipt: true,
             payment_details: {
                 token: token
             },
@@ -40,9 +40,11 @@ export const handler: Handlers = {
             body: JSON.stringify(body)
         }
 
-        const response = await fetch(`https://api.reverepayments.dev/api/v1/groups/${MERCHANT_ID}/transaction`, requestOptions)
+        const response = await fetch(`https://api.sandbox.reverepayments.dev/api/v1/groups/${MERCHANT_ID}/transaction`, requestOptions)
             .then(res => res.json())
-            .catch(err => { return `Error: ${err}` });
+            .catch(err => JSON.stringify({
+                error: err
+            }));
 
         return new Response(response);
     }
