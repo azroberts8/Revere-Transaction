@@ -26,6 +26,7 @@ export const handler: Handlers = {
             currency: "USD",
             email_address: "test@example.com",
             email_recipt: true,
+            processor_id: "4af239fb-2b93-44fa-9bae-c68a6e76ea9f",
             payment_details: {
                 token: token
             },
