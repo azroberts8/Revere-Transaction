@@ -12,7 +12,7 @@ export const handler: Handlers = {
         headers.append('Authorization', API_KEY);
 
         const body = {
-            amounts: { requested_amount: 1 },
+            amounts: { requested_amount: 1000 },
             billing_address: {
                 city: "Newark",
                 country: "US",
