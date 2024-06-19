@@ -3,7 +3,7 @@ import RadioSelector from "./RadioSelector.tsx";
 import TextInput from "./TextInput.tsx";
 
 export default function UIIsland() {
-    const value = useSignal("5000");
+    const value = useSignal("10000");
     const options = [
         { value: "100000", label: "$1,000" },
         { value: "50000", label: "$500" },
@@ -13,7 +13,7 @@ export default function UIIsland() {
         { value: "5000", label: "$50" }
     ];
     return (
-        <div class="w-96">
+        <div class="w-96 m-2">
             <RadioSelector name="testSelector" options={options} value={value} />
             <TextInput name="testText" value={value} />
             <div>Value is { value }</div>
