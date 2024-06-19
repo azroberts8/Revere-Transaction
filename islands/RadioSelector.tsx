@@ -25,7 +25,7 @@ export default function RadioSelector({ name, options, value }: RadioSelectorPar
             class="appearance-none radio-option" />
           <label 
             for={`${name}-${optionValue}`}
-            class="flex items-center justify-center h-full w-full border border-slate-700 rounded-lg bg-white text-slate-800"
+            class="flex items-center justify-center h-full w-full border border-gray-800 rounded-lg bg-white text-gray-800 hover:bg-slate-100"
           >
             { label ? label : optionValue }
           </label>
