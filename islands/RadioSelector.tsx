@@ -5,27 +5,31 @@ export interface RadioItemParams {
   label?: string;
 }
 
-interface RadioSelectorParams<T> {
+interface RadioSelectorParams {
   name: string;
   options: RadioItemParams[];
-  value: Signal<T>;
+  value: Signal;
 }
 
-export default function RadioSelector<T>({ name, options, value }: RadioSelectorParams<T>) {
+export default function RadioSelector({ name, options, value }: RadioSelectorParams) {
   return(
-    <div>
+    <div class="grid grid-cols-3 gap-2">
       { options.map(({ value: optionValue, label }) => (
-        <>
+        <div class="h-10 flex items-center justify-center">
           <input
             type="radio"
             name={name}
             id={`${name}-${optionValue}`}
             checked={ optionValue == value }
-            onClick={ () => value.value = optionValue } />
-          <label for={`${name}-${optionValue}`}>
+            onClick={ () => value.value = optionValue }
+            class="appearance-none radio-option" />
+          <label 
+            for={`${name}-${optionValue}`}
+            class="flex items-center justify-center h-full w-full border border-slate-700 rounded-lg bg-white text-slate-800"
+          >
             { label ? label : optionValue }
           </label>
-        </>
+        </div>
       )) }
     </div>
   )
