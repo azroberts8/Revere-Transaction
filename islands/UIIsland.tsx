@@ -1,9 +1,12 @@
 import { useSignal } from "@preact/signals";
 import RadioSelector from "./RadioSelector.tsx";
 import TextInput from "./TextInput.tsx";
+import { InputGroup } from "../components/InputGroup.tsx";
 
 export default function UIIsland() {
     const value = useSignal("10000");
+    const fname = useSignal("");
+    const lname = useSignal("");
     const options = [
         { value: "100000", label: "$1,000" },
         { value: "50000", label: "$500" },
@@ -15,7 +18,13 @@ export default function UIIsland() {
     return (
         <div class="w-96 m-2">
             <RadioSelector name="testSelector" options={options} value={value} />
-            <TextInput name="testText" value={value} />
+            <div class="mt-3">
+                <InputGroup>
+                    <TextInput name="fname" value={fname} label="First Name" />
+                    <TextInput name="lname" value={lname} label="Last Name" />
+                    <TextInput name="testText" value={value} label="Amount" />
+                </InputGroup>
+            </div>
             <div>Value is { value }</div>
         </div>
     );
