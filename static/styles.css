@@ -9,3 +9,12 @@
 .text-input:focus ~ label, .text-input:not(:placeholder-shown) ~ label {
     transform: translateY(calc(-50% - 9px)) scale(0.75);
 }
+
+div:has(> .text-input:focus) + div:has(> .text-input) {
+    @apply border-t-0;
+}
+
+div:has(> .text-input:focus) {
+    box-shadow: 0 0 6px -1px #1d4ed8;
+    @apply border-blue-700 border-b z-10;
+}

@@ -8,7 +8,7 @@ interface TextInputParams {
 
 export default function TextInput({ name, label, value }: TextInputParams) {
   return(
-    <div class="h-14 overflow-hidden border-x border-b border-gray-800 first:border-t first:rounded-t-lg last:rounded-b-lg relative">
+    <div class="h-14 overflow-hidden border-x border-t border-gray-800 last:border-b first:rounded-t-lg last:rounded-b-lg relative">
       <input 
         type="text"
         id={name}
@@ -16,7 +16,7 @@ export default function TextInput({ name, label, value }: TextInputParams) {
         value={value}
         placeholder=" "
         onInput={ (e) => value.value = e.currentTarget.value }
-        class="text-input w-full px-3 pt-6 pb-2.5 text-base" />
+        class="text-input w-full px-3 pt-6 pb-2.5 text-base focus:border-none outline-none" />
       <label 
         for={name}
         class="text-slate-500 transition-transform transition-100 absolute origin-top-left top-1/2 left-3 -translate-y-1/2"

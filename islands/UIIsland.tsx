@@ -19,11 +19,12 @@ export default function UIIsland() {
         <div class="w-96 m-2">
             <RadioSelector name="testSelector" options={options} value={value} />
             <div class="mt-3">
-                <InputGroup>
-                    <TextInput name="fname" value={fname} label="First Name" />
-                    <TextInput name="lname" value={lname} label="Last Name" />
-                    <TextInput name="testText" value={value} label="Amount" />
-                </InputGroup>
+                <TextInput name="fname" value={fname} label="First Name" />
+                <TextInput name="lname" value={lname} label="Last Name" />
+                <TextInput name="testText" value={value} label="Amount" />
+            </div>
+            <div class="mt-3">
+                <TextInput name="fname" value={fname} label="First Name" />
             </div>
             <div>Value is { value }</div>
         </div>
