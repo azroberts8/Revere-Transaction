@@ -9,6 +9,7 @@ import * as $api_transact_sale from "./routes/api/transact-sale.ts";
 import * as $index from "./routes/index.tsx";
 import * as $CurrencyInput from "./islands/CurrencyInput.tsx";
 import * as $RadioSelector from "./islands/RadioSelector.tsx";
+import * as $TabSelector from "./islands/TabSelector.tsx";
 import * as $TextInput from "./islands/TextInput.tsx";
 import * as $UIIsland from "./islands/UIIsland.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -24,6 +25,7 @@ const manifest = {
   islands: {
     "./islands/CurrencyInput.tsx": $CurrencyInput,
     "./islands/RadioSelector.tsx": $RadioSelector,
+    "./islands/TabSelector.tsx": $TabSelector,
     "./islands/TextInput.tsx": $TextInput,
     "./islands/UIIsland.tsx": $UIIsland,
   },

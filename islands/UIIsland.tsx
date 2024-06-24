@@ -1,10 +1,11 @@
 import { useSignal } from "@preact/signals";
 import RadioSelector from "./RadioSelector.tsx";
 import TextInput from "./TextInput.tsx";
-import { InputGroup } from "../components/InputGroup.tsx";
 import CurrencyInput from "./CurrencyInput.tsx";
+import TabSelector from "./TabSelector.tsx";
 
 export default function UIIsland() {
+    const frequency = useSignal("once");
     const value = useSignal(1000);
     const fname = useSignal("");
     const lname = useSignal("");
@@ -16,9 +17,17 @@ export default function UIIsland() {
         { value: 100, label: "$100" },
         { value: 50, label: "$50" }
     ];
+    const tabOptions = [
+        { value: "once", label: "Give Once" },
+        { value: "monthly", label: "Monthly" },
+        { value: "annually", label: "Annually" }
+    ]
     return (
         <div class="w-96 m-2">
-            <RadioSelector name="testSelector" options={options} value={value} />
+            <TabSelector name="testTabs" options={tabOptions} value={frequency} />
+            <div class="mt-3">
+                <RadioSelector name="testSelector" options={options} value={value} />
+            </div>
             <div class="mt-3">
                 <TextInput name="fname" value={fname} label="First Name" />
                 <TextInput name="lname" value={lname} label="Last Name" />
@@ -28,6 +37,7 @@ export default function UIIsland() {
                 <TextInput name="fname" value={fname} label="First Name" />
             </div>
             <div>Value is { value }</div>
+            <div>Frequency is { frequency }</div>
         </div>
     );
 }
