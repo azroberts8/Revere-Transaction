@@ -1,7 +1,7 @@
 import type { Signal } from "@preact/signals";
 
 export interface RadioItemParams {
-  value: string;
+  value: string | number;
   label?: string;
 }
 
