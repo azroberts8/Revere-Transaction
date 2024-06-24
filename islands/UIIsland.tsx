@@ -3,12 +3,14 @@ import RadioSelector from "./RadioSelector.tsx";
 import TextInput from "./TextInput.tsx";
 import CurrencyInput from "./CurrencyInput.tsx";
 import TabSelector from "./TabSelector.tsx";
+import DropDownSelector from "./DropDownSelector.tsx";
 
 export default function UIIsland() {
     const frequency = useSignal("once");
     const value = useSignal(1000);
     const fname = useSignal("");
     const lname = useSignal("");
+    const state = useSignal("");
     const options = [
         { value: 1000, label: "$1,000" },
         { value: 500, label: "$500" },
@@ -22,6 +24,24 @@ export default function UIIsland() {
         { value: "monthly", label: "Monthly" },
         { value: "annually", label: "Annually" }
     ]
+    const stateOptions = [
+        {
+            title: "States",
+            options: [
+                { value: "CA", label: "California" },
+                { value: "DE", label: "Delaware" },
+                { value: "FL", label: "Florida" },
+                { value: "TX", label: "Texas" }
+            ]
+        },
+        {
+            title: "Territories",
+            options: [
+                { value: "PR", label: "Puerto Rico" },
+                { value: "VI", label: "Virgin Islands" }
+            ]
+        }
+    ]
     return (
         <div class="w-96 m-2">
             <TabSelector name="testTabs" options={tabOptions} value={frequency} />
@@ -32,12 +52,14 @@ export default function UIIsland() {
                 <TextInput name="fname" value={fname} label="First Name" />
                 <TextInput name="lname" value={lname} label="Last Name" />
                 <CurrencyInput name="donationAmount" value={value} label="Amount" />
+                <DropDownSelector name="stateSelector" options={stateOptions} label="State" value={state} />
             </div>
             <div class="mt-3">
                 <TextInput name="fname" value={fname} label="First Name" />
             </div>
             <div>Value is { value }</div>
             <div>Frequency is { frequency }</div>
+            <div>State is { state }</div>
         </div>
     );
 }
