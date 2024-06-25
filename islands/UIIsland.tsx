@@ -23,25 +23,7 @@ export default function UIIsland() {
         { value: "once", label: "Give Once" },
         { value: "monthly", label: "Monthly" },
         { value: "annually", label: "Annually" }
-    ]
-    const stateOptions = [
-        {
-            title: "States",
-            options: [
-                { value: "CA", label: "California" },
-                { value: "DE", label: "Delaware" },
-                { value: "FL", label: "Florida" },
-                { value: "TX", label: "Texas" }
-            ]
-        },
-        {
-            title: "Territories",
-            options: [
-                { value: "PR", label: "Puerto Rico" },
-                { value: "VI", label: "Virgin Islands" }
-            ]
-        }
-    ]
+    ];
     return (
         <div class="w-96 m-2">
             <TabSelector name="testTabs" options={tabOptions} value={frequency} />
@@ -52,7 +34,18 @@ export default function UIIsland() {
                 <TextInput name="fname" value={fname} label="First Name" />
                 <TextInput name="lname" value={lname} label="Last Name" />
                 <CurrencyInput name="donationAmount" value={value} label="Amount" />
-                <DropDownSelector name="stateSelector" options={stateOptions} label="State" value={state} />
+                <DropDownSelector name="stateSelector" label="State" value={state} >
+                    <optgroup label="States">
+                        <option value="CA">California</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="TX">Texas</option>
+                    </optgroup>
+                    <optgroup label="Territories">
+                        <option value="PR">Puerto Rico</option>
+                        <option value="VI">Virgin Islands</option>
+                    </optgroup>
+                </DropDownSelector>
             </div>
             <div class="mt-3">
                 <TextInput name="fname" value={fname} label="First Name" />
