@@ -4,6 +4,7 @@ import TextInput from "./TextInput.tsx";
 import CurrencyInput from "./CurrencyInput.tsx";
 import TabSelector from "./TabSelector.tsx";
 import DropDownSelector from "./DropDownSelector.tsx";
+import { Button } from "../components/Button.tsx";
 
 export default function UIIsland() {
     const frequency = useSignal("once");
@@ -49,6 +50,9 @@ export default function UIIsland() {
             </div>
             <div class="mt-3">
                 <TextInput name="fname" value={fname} label="First Name" />
+            </div>
+            <div class="mt-3">
+                <Button onClick={() => console.log("Clicked!")}>Hello</Button>
             </div>
             <div>Value is { value }</div>
             <div>Frequency is { frequency }</div>
