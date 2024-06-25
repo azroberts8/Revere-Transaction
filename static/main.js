@@ -15,7 +15,7 @@ reverePay.onSuccess = (data) => {
 
     console.log(data);
     
-    fetch("./api/transact", {
+    fetch("./api/transact-sale", {
         method: "POST",
         body: JSON.stringify({
             "token": data.token
