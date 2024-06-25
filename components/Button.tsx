@@ -6,7 +6,7 @@ export function Button(props: JSX.HTMLAttributes<HTMLButtonElement>) {
     <button
       {...props}
       disabled={!IS_BROWSER || props.disabled}
-      class="w-full h-14 bg-blue-700 hover:bg-blue-900 text-white text-lg font-semibold rounded-lg"
+      class="w-full h-14 bg-blue-700 hover:bg-blue-900 text-white font-semibold rounded-lg"
     />
   )
 }

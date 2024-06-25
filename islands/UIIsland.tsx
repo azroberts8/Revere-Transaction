@@ -5,6 +5,7 @@ import CurrencyInput from "./CurrencyInput.tsx";
 import TabSelector from "./TabSelector.tsx";
 import DropDownSelector from "./DropDownSelector.tsx";
 import { Button } from "../components/Button.tsx";
+import { Header } from "../components/Header.tsx";
 
 export default function UIIsland() {
     const frequency = useSignal("once");
@@ -26,7 +27,9 @@ export default function UIIsland() {
         { value: "annually", label: "Annually" }
     ];
     return (
-        <div class="w-96 m-2">
+        <>
+        <Header title="Enter your information" backFn={() => console.log("back")} />
+        <div class="mx-2 my-8">
             <TabSelector name="testTabs" options={tabOptions} value={frequency} />
             <div class="mt-3">
                 <RadioSelector name="testSelector" options={options} value={value} />
@@ -58,5 +61,6 @@ export default function UIIsland() {
             <div>Frequency is { frequency }</div>
             <div>State is { state }</div>
         </div>
+        </>
     );
 }
