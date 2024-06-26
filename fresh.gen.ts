@@ -11,6 +11,7 @@ import * as $revere_portal from "./routes/revere-portal.tsx";
 import * as $CurrencyInput from "./islands/CurrencyInput.tsx";
 import * as $DonationAmountForm from "./islands/DonationAmountForm.tsx";
 import * as $DonationForm from "./islands/DonationForm.tsx";
+import * as $DonorAddressForm from "./islands/DonorAddressForm.tsx";
 import * as $DonorDetailsForm from "./islands/DonorDetailsForm.tsx";
 import * as $DropDownSelector from "./islands/DropDownSelector.tsx";
 import * as $RadioSelector from "./islands/RadioSelector.tsx";
@@ -32,6 +33,7 @@ const manifest = {
     "./islands/CurrencyInput.tsx": $CurrencyInput,
     "./islands/DonationAmountForm.tsx": $DonationAmountForm,
     "./islands/DonationForm.tsx": $DonationForm,
+    "./islands/DonorAddressForm.tsx": $DonorAddressForm,
     "./islands/DonorDetailsForm.tsx": $DonorDetailsForm,
     "./islands/DropDownSelector.tsx": $DropDownSelector,
     "./islands/RadioSelector.tsx": $RadioSelector,

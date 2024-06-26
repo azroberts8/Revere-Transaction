@@ -28,7 +28,7 @@ export default function UIIsland() {
     ];
     return (
         <>
-        <Header title="Enter your information" backFn={() => console.log("back")} />
+        <Header backFn={() => console.log("back")}>Enter your information</Header>
         <div class="mx-2 my-8">
             <TabSelector name="testTabs" options={tabOptions} value={frequency} />
             <div class="mt-3">
