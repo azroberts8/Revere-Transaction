@@ -3,11 +3,6 @@ import DonationAmountForm from "./DonationAmountForm.tsx";
 import DonorDetailsForm from "./DonorDetailsForm.tsx";
 import DonorAddressform from "./DonorAddressForm.tsx";
 
-const loadDonationAmount = () => console.log("Loading donation amount page");
-const loadDonorDetails = () => console.log("Loading donor details!");
-const loadAddressForm = () => console.log("Loading address form");
-const loadConfirmationForm = () => console.log("Loading confirmation form");
-
 export default function DonationForm() {
     const frequency = useSignal("once");
     const donationAmount = useSignal(110);
@@ -21,26 +16,37 @@ export default function DonationForm() {
     const state = useSignal("");
     const zipcode = useSignal("");
     const country = useSignal("US");
+    const activeForm = useSignal(0);
+    const increment = () => activeForm.value++;
+    const decrement = () => activeForm.value--;
     return (
-        // <DonationAmountForm
-        //     frequency={frequency}
-        //     donationAmount={donationAmount}
-        //     submit={loadDonorDetails} />
-        // <DonorDetailsForm
-        //     firstName={firstName}
-        //     lastName={lastName}
-        //     email={email}
-        //     phone={phone}
-        //     back={loadDonationAmount}
-        //     submit={loadAddressForm}/>
-        <DonorAddressform
-            address={address}
-            unit={unit}
-            city={city}
-            state={state}
-            zipcode={zipcode}
-            country={country}
-            back={loadDonorDetails}
-            submit={loadConfirmationForm} />
+        <>
+            <div class={ `form ${activeForm == 0 ? 'active' : 'past'}` }>
+                <DonationAmountForm
+                frequency={frequency}
+                donationAmount={donationAmount}
+                submit={increment} />
+            </div>
+            <div class={ `form ${activeForm < 1 ? 'future' : activeForm > 1 ? 'past' : 'active'}` }>
+                <DonorDetailsForm
+                    firstName={firstName}
+                    lastName={lastName}
+                    email={email}
+                    phone={phone}
+                    back={decrement}
+                    submit={increment}/>
+            </div>
+            <div class={ `form ${activeForm < 2 ? 'future' : activeForm > 2 ? 'past' : 'active'}` }>
+                <DonorAddressform
+                    address={address}
+                    unit={unit}
+                    city={city}
+                    state={state}
+                    zipcode={zipcode}
+                    country={country}
+                    back={decrement}
+                    submit={increment} />
+            </div>
+        </>
     );
 }

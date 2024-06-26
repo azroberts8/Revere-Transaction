@@ -47,7 +47,9 @@ export default function DonationAmountForm({
           <CurrencyInput name="amountInput" value={donationAmount} />
         </div>
       </div>
-      <Button onClick={submit}>Donate</Button>
+      <div>
+        <Button onClick={submit}>Donate</Button>
+      </div>
     </div>
   );
 }

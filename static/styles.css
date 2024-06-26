@@ -47,3 +47,11 @@ div:has(> .text-input:focus) {
 .tab-selector:has(> .tab-option:checked) + .tab-selector > label {
     @apply border-l-0;
 }
+
+.form {
+    @apply h-full;
+}
+
+.past, .future {
+    display: none;
+}
