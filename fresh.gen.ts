@@ -7,7 +7,10 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_transact_sale from "./routes/api/transact-sale.ts";
 import * as $index from "./routes/index.tsx";
+import * as $revere_portal from "./routes/revere-portal.tsx";
 import * as $CurrencyInput from "./islands/CurrencyInput.tsx";
+import * as $DonationAmountForm from "./islands/DonationAmountForm.tsx";
+import * as $DonationForm from "./islands/DonationForm.tsx";
 import * as $DropDownSelector from "./islands/DropDownSelector.tsx";
 import * as $RadioSelector from "./islands/RadioSelector.tsx";
 import * as $TabSelector from "./islands/TabSelector.tsx";
@@ -22,9 +25,12 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/api/transact-sale.ts": $api_transact_sale,
     "./routes/index.tsx": $index,
+    "./routes/revere-portal.tsx": $revere_portal,
   },
   islands: {
     "./islands/CurrencyInput.tsx": $CurrencyInput,
+    "./islands/DonationAmountForm.tsx": $DonationAmountForm,
+    "./islands/DonationForm.tsx": $DonationForm,
     "./islands/DropDownSelector.tsx": $DropDownSelector,
     "./islands/RadioSelector.tsx": $RadioSelector,
     "./islands/TabSelector.tsx": $TabSelector,
