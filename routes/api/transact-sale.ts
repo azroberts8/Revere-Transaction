@@ -6,25 +6,38 @@ const MERCHANT_ID: string = Deno.env.get("REVERE_MERCHANT_ID") || "";
 export const handler: Handlers = {
     async POST(_req: Request, _ctx: FreshContext) {
         // Get the token from the tokenizer
-        const { token } = await _req.json();
+        const {
+            city,
+            country,
+            email,
+            fname,
+            lname,
+            address1,
+            address2,
+            zipcode,
+            state,
+            amount,
+            token
+        } = await _req.json();
 
         const headers = new Headers();
         headers.append('Authorization', API_KEY);
 
         const body = {
-            amounts: { requested_amount: 1000 },
+            amounts: { requested_amount: Number(amount) },
             billing_address: {
-                city: "Newark",
-                country: "US",
-                email: "test@example.com",
-                first_name: "John",
-                last_name: "Smith",
-                line_1: "1725 Slough Avenue",
-                postal_code: "18505",
-                subdivision: "PA"
+                city: city,
+                country: country,
+                email: email,
+                first_name: fname,
+                last_name: lname,
+                line_1: address1,
+                line_2: address2,
+                postal_code: zipcode,
+                subdivision: state
             },
             currency: "USD",
-            email_address: "test@example.com",
+            email_address: email,
             email_recipt: true,
             processor_id: "4af239fb-2b93-44fa-9bae-c68a6e76ea9f",
             payment_details: {

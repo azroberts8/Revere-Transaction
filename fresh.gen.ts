@@ -10,6 +10,7 @@ import * as $index from "./routes/index.tsx";
 import * as $revere_portal from "./routes/revere-portal.tsx";
 import * as $CurrencyInput from "./islands/CurrencyInput.tsx";
 import * as $DonationAmountForm from "./islands/DonationAmountForm.tsx";
+import * as $DonationCCForm from "./islands/DonationCCForm.tsx";
 import * as $DonationForm from "./islands/DonationForm.tsx";
 import * as $DonorAddressForm from "./islands/DonorAddressForm.tsx";
 import * as $DonorDetailsForm from "./islands/DonorDetailsForm.tsx";
@@ -32,6 +33,7 @@ const manifest = {
   islands: {
     "./islands/CurrencyInput.tsx": $CurrencyInput,
     "./islands/DonationAmountForm.tsx": $DonationAmountForm,
+    "./islands/DonationCCForm.tsx": $DonationCCForm,
     "./islands/DonationForm.tsx": $DonationForm,
     "./islands/DonorAddressForm.tsx": $DonorAddressForm,
     "./islands/DonorDetailsForm.tsx": $DonorDetailsForm,
