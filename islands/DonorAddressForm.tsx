@@ -26,7 +26,7 @@ export default function DonorAddressform({
     submit
 }: AddressFormParams) {
     return(
-        <div class="h-full flex flex-col">
+        <div class="h-full flex flex-col bg-white">
             <Header backFn={back}>Enter your address</Header>
             <div class="h-full p-7">
                 <div>

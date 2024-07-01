@@ -4,7 +4,7 @@ export function DonationWindow() {
     return (
         <div class="w-full h-full max-w-4xl max-h-[42rem] grid grid-cols-[auto_41%] gap-5">
             <div class="bg-white rounded-2xl">Hello</div>
-            <div class="bg-white rounded-2xl">
+            <div class="bg-white rounded-2xl overflow-hidden relative">
                 <DonationForm />
             </div>
         </div>

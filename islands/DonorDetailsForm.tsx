@@ -21,7 +21,7 @@ export default function DonorDetailsForm({
     submit
 }: DonorDetailsParams) {
     return(
-        <div class="h-full flex flex-col">
+        <div class="h-full flex flex-col bg-white">
             <Header backFn={back}>Enter your details</Header>
             <div class="h-full p-7">
                 <TextInput name="firstNameInput" label="First Name" value={firstName} />

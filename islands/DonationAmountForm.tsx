@@ -37,7 +37,7 @@ export default function DonationAmountForm({
   ];
   const amountOptions = frequency == "once" ? singleAmountOptions : monthlyAmountOptions;
   return (
-    <div class="p-7 h-full flex flex-col">
+    <div class="p-7 h-full flex flex-col bg-white">
       <div class="h-full">
         <TabSelector name="frequencySelector" options={frequencyOptions} value={frequency} />
         <div class="pt-5">

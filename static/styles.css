@@ -49,9 +49,13 @@ div:has(> .text-input:focus) {
 }
 
 .form {
-    @apply h-full;
+    @apply h-full w-full absolute top-0 left-0 opacity-100 transition duration-200;
 }
 
-.past, .future {
-    display: none;
+.past {
+    @apply opacity-0 -translate-x-full;
+}
+
+.future {
+    @apply opacity-0 translate-x-full;
 }
